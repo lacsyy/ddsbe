@@ -3,7 +3,6 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
-$router->get('/users', 'UserController@getUsers');
 $router->get('/users', 'UserController@index');//get all users records
 $router->post('/users', 'UserController@add');//create new user record
 $router->get('/users/{id}', 'UserController@show');//get user by id
