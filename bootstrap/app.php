@@ -20,7 +20,7 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 */
 
 $app = new Laravel\Lumen\Application(
-    dirname(_DIR_)
+    dirname(__DIR__)
 );
 
 $app->withFacades();
@@ -104,7 +104,7 @@ $app->middleware([
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-    require _DIR_.'/../routes/web.php';
+    require __DIR__.'/../routes/web.php';
 });
 
 return $app;
