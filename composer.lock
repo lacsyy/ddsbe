@@ -199,7 +199,7 @@
             "funding": [
                 {
                     "url": "https://github.com/GrahamCampbell",
-                    "type": "github" 
+                    "type": "github"
                 },
                 {
                     "url": "https://tidelift.com/funding/github/packagist/classpreloader/classpreloader",
