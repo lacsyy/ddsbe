@@ -19,9 +19,12 @@ class User extends Model
         'jobid'
     ];
 
+    
+
     // Optional: for route model binding to use 'userid' instead of default 'id'
     public function getRouteKeyName()
     {
         return 'userid';
     }
+    
 }
