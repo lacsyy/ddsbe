@@ -1,9 +1,9 @@
 <?php
 
-require_once __DIR__.'/../vendor/autoload.php';
+require_once _DIR_.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
-    dirname(__DIR__)
+    dirname(_DIR_)
 ))->bootstrap();
 
 date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
@@ -20,7 +20,7 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 */
 
 $app = new Laravel\Lumen\Application(
-    dirname(__DIR__)
+    dirname(_DIR_)
 );
 
 $app->withFacades();
@@ -71,13 +71,9 @@ $app->configure('app');
 |
 */
 
- $app->middleware([
+$app->middleware([
     App\Http\Middleware\AuthenticateAccess::class,
- ]);
-
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -108,7 +104,7 @@ $app->configure('app');
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require _DIR_.'/../routes/web.php';
 });
 
 return $app;

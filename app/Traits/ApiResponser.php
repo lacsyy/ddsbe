@@ -15,7 +15,7 @@ trait ApiResponser
     */
     public function successResponse($data, $code = Response::HTTP_OK)
     {
-        return response()->json(['data' => $data, 'site' => 1], $code);
+    return response()->json(['data' => $data, 'site' => 1], $code);
     }
     /**
     * Build error responses
@@ -23,21 +23,9 @@ trait ApiResponser
     * @param int $code
     * @return Illuminate\Http\JsonResponse
     */
-
-    public function validResponse($data, $code = Response::HTTP_OK)
-    {
-        return response()->json(['data' => $data], $code);
-    }
-
     public function errorResponse($message, $code)
 
     {
-        return response()->json(['error' => $message, 'site' => 1, 'code' => $code],
-        $code);
-    }
-
-    public function errorMessage($message, $code)
-    {
-        return response($message, $code)->header('content-type', 'application/json');
+        return response()->json(['error' => $message, 'code' => $code, 'site' => 2],  $code);
     }
 }
