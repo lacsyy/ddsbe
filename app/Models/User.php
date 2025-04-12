@@ -4,13 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model {
+class User extends Model
+{
+    protected $table = 'users'; // only if your table isn't named "users" by default
 
-    protected $table = 'tbluser';
+    protected $fillable = [
+        'username',
+        'password',
+        'gender'
+    ];
 
-    protected $fillable = ['username', 'password', 'jobid'];
-
-        public $timestamps = false;
-        protected $primaryKey = 'userid';
-        protected $hidden = ['password'];
+    public $timestamps = false; // if you don’t have created_at and updated_at columns
 }
+
