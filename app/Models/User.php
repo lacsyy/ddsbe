@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $table = 'users'; // Make sure this matches your actual table name
+    protected $table = 'tbluser'; // Make sure this matches your actual table name
     protected $primaryKey = 'userid'; // Important if your PK is not "id"
     public $incrementing = true; // Set to false if userid is NOT auto-incrementing
     protected $keyType = 'int'; // Use 'string' if your userid is not numeric
